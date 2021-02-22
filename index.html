@@ -51,7 +51,7 @@
         <script>
             function initMap() {
                 const map = new google.maps.Map(document.getElementById("map"), {
-                    zoom: 13,
+                    zoom: 14,
                     center: { lat: 45.40732362547058, lng: -75.70556127302099 },
                 });
 
@@ -61,8 +61,18 @@
                     return new google.maps.Marker({
                         position: location,
                         label: labels[i % labels.length],
+                        icon: 'images/Leo.png',
                     });
                 });
+
+
+/*                 const markers = locations.map((location, i) => {
+                    return new google.maps.Marker({
+                        position: location,
+                        label: labels[i % labels.length],
+                        icon: 'images/Leo.png',
+                    });
+                }); */
 
                 // Images were modified Microsoft Office icons
                 // new MarkerClusterer(map, markers, {
