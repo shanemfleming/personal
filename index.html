@@ -65,19 +65,10 @@
                     });
                 });
 
-
-/*                 const markers = locations.map((location, i) => {
-                    return new google.maps.Marker({
-                        position: location,
-                        label: labels[i % labels.length],
-                        icon: 'images/Leo.png',
-                    });
-                }); */
-
                 // Images were modified Microsoft Office icons
-                // new MarkerClusterer(map, markers, {
-                //     imagePath:"images/f",
-                //});
+                 new MarkerClusterer(map, markers, {
+                     imagePath:"images/f",
+                });
                 }
 
                 const locations = [
@@ -133,9 +124,9 @@
         <div id="map"></div>
         <div>
             <p>
-                This map (using data provided by <a class="sitelinks" href="https://open.ottawa.ca/datasets/street-food-vendors?geometry=-75.889%2C45.349%2C-75.524%2C45.433" target="_blank">Open Ottawa</a>) 
-                presents the locations of Ottawa's many street food vendors. Higher density areas, such as downtown, have been clustered by the Marker Clusterer and will show the 
-                clustered locations when you zoom further in or click on the cluster.
+                Herein lies the great journey of Napoleon (Leo), of House Van Wyngaargen, First of His Name, Sleep of Couches and Destroyer of Litter Boxes.
+                So accomplished that this cat was, he ruled over kingdoms thrice, reaching his current reign upon a summer's eve during the Great Plague of COVID-19. 
+                There, he rests and waits for his daily belly rubs before his servents work at their strange glowing slabs.
             </p>
         </div>
     </body>
