@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>LEOOOOO</title>
+        <style>
+              /* body style adapted from my GEOM101 website https://shanemfleming.github.io/stylesheet.css */
+            body {
+                background-color: #1a2b3b;
+                color: white;
+                font-family: Georgia, "Times New Roman", serif;
+                margin-top: 35px;
+                margin-bottom: 50px;
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+
+            /* style adapted from my GEOM101 website https://shanemfleming.github.io/stylesheet.css */
+            h1 {
+                font-family: Helvetica, Verdana, sans-serif;
+                margin-bottom: 45px;
+            }
+
+            p {
+                padding: 5px;
+            }
+
+            /* created with reference to https://www.w3schools.com/css/css_link.asp and my personal website from GEOM101 https://shanemfleming.github.io/stylesheet.css*/
+            .sitelinks:link {
+                color: rgb(255, 213, 134);
+            }
+            .sitelinks:visited {
+                color: rgb(221, 115, 53);
+            }
+            .sitelinks:hover {
+                color: rgb(255, 157, 9);
+            }
+
+            #map {
+                height: 700px;
+                width: 100%;
+                text-shadow: 5px 5px 8px white;
+            }
+        </style>
+        
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWirNQSn0AAGKlFXnxbXutniPqRxsQD1Y&callback=initMap&libraries=&v=weekly" defer></script>
+
+        <!-- <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script> -->
+
+        <!-- script created and modified from https://developers.google.com/maps/documentation/javascript/marker-clustering -->
+        <!-- location data obtained from https://open.ottawa.ca/datasets/street-food-vendors?geometry=-75.889%2C45.349%2C-75.524%2C45.433 -->
+        <script>
+            function initMap() {
+                const map = new google.maps.Map(document.getElementById("map"), {
+                    zoom: 13,
+                    center: { lat: 45.40732362547058, lng: -75.70556127302099 },
+                });
+
+                const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+                const markers = locations.map((location, i) => {
+                    return new google.maps.Marker({
+                        position: location,
+                        label: labels[i % labels.length],
+                    });
+                });
+
+                // Images were modified Microsoft Office icons
+                // new MarkerClusterer(map, markers, {
+                //     imagePath:"images/f",
+                //});
+                }
+
+                const locations = [
+                    { lat: 	45.420304	, lng: 	-75.697689	 },
+                    { lat: 	45.42052	, lng: 	-75.7008	 },
+                    { lat: 	45.42284	, lng: 	-75.69738	 },
+                    { lat: 	45.423613	, lng: 	-75.694762	 },
+                    { lat: 	45.416194	, lng: 	-75.702718	 },
+                    { lat: 	45.416176	, lng: 	-75.69641	 },
+                    { lat: 	45.41969	, lng: 	-75.700082	 },
+                    { lat: 	45.422637	, lng: 	-75.697366	 },
+                    { lat: 	45.419501	, lng: 	-75.691098	 },
+                    { lat: 	45.418359	, lng: 	-75.702549	 },
+                    { lat: 	45.418384	, lng: 	-75.698758	 },
+                    { lat: 	45.423133	, lng: 	-75.697839	 },
+                    { lat: 	45.423133	, lng: 	-75.697839	 },
+                    { lat: 	45.419626	, lng: 	-75.692237	 },
+                    { lat: 	45.422309	, lng: 	-75.697148	 },
+                    { lat: 	45.421139	, lng: 	-75.70134	 },
+                    { lat: 	45.420671	, lng: 	-75.695541	 },
+                    { lat: 	45.421351	, lng: 	-75.6991	 },
+                    { lat: 	45.418134	, lng: 	-75.701332	 },
+                    { lat: 	45.41928	, lng: 	-75.705969	 },
+                    { lat: 	45.421894	, lng: 	-75.699168	 },
+                    { lat: 	45.420191	, lng: 	-75.692506	 },
+                    { lat: 	45.416606	, lng: 	-75.697895	 },
+                    { lat: 	45.419044	, lng: 	-75.696888	 },
+                    { lat: 	45.42334	, lng: 	-75.697879	 },
+                    { lat: 	45.391436	, lng: 	-75.755142	 },
+                    { lat: 	45.430919	, lng: 	-75.668878	 },
+                    { lat: 	45.384108	, lng: 	-75.619852	 },
+                    { lat: 	45.40168	, lng: 	-75.727211	 },
+                    { lat: 	45.395951	, lng: 	-75.744932	 },
+                    { lat: 	45.350554	, lng: 	-75.793211	 },
+                    { lat: 	45.394674	, lng: 	-75.720555	 },
+                    { lat: 	45.421781	, lng: 	-75.697806	 },
+                    { lat: 	45.370247	, lng: 	-75.751487	 },
+                    { lat: 	45.42467	, lng: 	-75.685622	 },
+                    { lat: 	45.424171	, lng: 	-75.685429	 },
+                    { lat: 	45.400938	, lng: 	-75.705547	 },
+                    { lat: 	45.431368	, lng: 	-75.685441	 },
+                    { lat: 	45.399613	, lng: 	-75.732895	 },
+                    { lat: 	45.40375	, lng: 	-75.734074	 },
+                ];
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>
+                A Cat's Tail: Leo Goes West
+            </h1>
+        </div>
+        <div id="map"></div>
+        <div>
+            <p>
+                This map (using data provided by <a class="sitelinks" href="https://open.ottawa.ca/datasets/street-food-vendors?geometry=-75.889%2C45.349%2C-75.524%2C45.433" target="_blank">Open Ottawa</a>) 
+                presents the locations of Ottawa's many street food vendors. Higher density areas, such as downtown, have been clustered by the Marker Clusterer and will show the 
+                clustered locations when you zoom further in or click on the cluster.
+            </p>
+        </div>
+    </body>
+</html>
