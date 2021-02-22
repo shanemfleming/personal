@@ -55,12 +55,9 @@
                     center: { lat: 45.40732362547058, lng: -75.70556127302099 },
                 });
 
-                const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
                 const markers = locations.map((location, i) => {
                     return new google.maps.Marker({
                         position: location,
-                        label: labels[i % labels.length],
                         icon: 'images/Leo.png',
                     });
                 });
@@ -121,7 +118,9 @@
                 A Cat's Tail: Leo Goes West
             </h1>
         </div>
-        <div id="map"></div>
+        <div>
+            <img src="images/LeoTheGreat.jpg" alt="Leo The Great">
+        </div>
         <div>
             <p>
                 Herein lies the great journey of Napoleon (Leo), of House Van Wyngaargen, First of His Name, Sleep of Couches and Destroyer of Litter Boxes.
@@ -129,5 +128,6 @@
                 There, he rests and waits for his daily belly rubs before his servents work at their strange glowing slabs.
             </p>
         </div>
+        <div id="map"></div>
     </body>
 </html>
